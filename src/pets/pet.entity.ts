@@ -21,8 +21,8 @@ export class Pet {
   })
   type?: string;
 
-  @Column()
-  @Field((type) => Int)
+  @Column({ nullable: true })
+  @Field((type) => Int, { nullable: true })
   ownerId: number;
 
   @ManyToOne(() => Owner, (owner) => owner.pets)
