@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { PetsModule } from './pets/pets.module';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { OwnersModule } from './owners/owners.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       synchronize: true, //For development, in production use migrations TypeOrm also soportes migrations
     }),
     PetsModule,
+    OwnersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
